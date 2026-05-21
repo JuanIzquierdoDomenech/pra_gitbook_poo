@@ -1,0 +1,2 @@
+# Preparación del entorno
+

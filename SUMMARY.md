@@ -1,3 +1,17 @@
 # Table of contents
 
 * [Introducción](README.md)
+* [Preparación del entorno](preparacion-del-entorno.md)
+* [Parte 1: EDL Lista genérica](parte-1-edl-lista-generica/README.md)
+  * [Interfaz List\<T>](parte-1-edl-lista-generica/interfaz-list-less-than-t-greater-than.md)
+  * [Clase ListArray\<T>](parte-1-edl-lista-generica/clase-listarray-less-than-t-greater-than.md)
+  * [Clase Node\<T>](parte-1-edl-lista-generica/clase-node-less-than-t-greater-than.md)
+  * [Clase ListLinked\<T>](parte-1-edl-lista-generica/clase-listlinked-less-than-t-greater-than.md)
+* [Parte 2: Jerarquía de dibujo 2D](parte-2-jerarquia-de-dibujo-2d/README.md)
+  * [Clase Point2D](parte-2-jerarquia-de-dibujo-2d/clase-point2d.md)
+  * [Clase abstracta Shape](parte-2-jerarquia-de-dibujo-2d/clase-abstracta-shape.md)
+  * [Clase Circle](parte-2-jerarquia-de-dibujo-2d/clase-circle.md)
+  * [Clase Rectangle](parte-2-jerarquia-de-dibujo-2d/clase-rectangle.md)
+  * [Clase Square](parte-2-jerarquia-de-dibujo-2d/clase-square.md)
+  * [Clase Drawing](parte-2-jerarquia-de-dibujo-2d/clase-drawing.md)
+* [Entrega y evaluación de la práctica](entrega-y-evaluacion-de-la-practica.md)

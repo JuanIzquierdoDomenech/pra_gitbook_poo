@@ -1,0 +1,2 @@
+# Clase abstracta Shape
+
