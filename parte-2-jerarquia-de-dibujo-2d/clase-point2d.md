@@ -18,3 +18,9 @@ El tipo de datos `Point2D`, que representa un punto bidimensional en el espacio 
 | `public` | `bool operator==(const Point2D &a, const Point2D &b)`           | Sobrecarga global del operador `==`. Comprueba si dos puntos son iguales.                 |
 | `public` | `bool operator!=(const Point2D &a, const Point2D &b)`           | Sobrecarga global del operador `!=`. Comprueba si dos puntos son diferentes.              |
 | `public` | `std::ostream& operator<<(std::ostream &out, const Point2D &p)` | Sobrecarga global del operador `<<`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
+
+|     |     |     |
+| --- | --- | --- |
+| asd | asd | asd |
+|     | asd | asd |
+|     |     |     |
