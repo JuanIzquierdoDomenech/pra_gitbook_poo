@@ -8,8 +8,8 @@ En esta práctica consideraremos una implementación **alternativa** de la inter
 
 | Visibilidad | Declaración     | Descripción                                                                                   |
 | ----------- | --------------- | --------------------------------------------------------------------------------------------- |
-| public      | `T data`        | El elemento almacenado, de tipo genérico `T`.                                                 |
-| public      | `Node<T>* next` | Puntero al siguiente nodo de la secuencia (o `nullptr` si es el último nodo de la secuencia). |
+| `public`    | `T data`        | El elemento almacenado, de tipo genérico `T`.                                                 |
+| `public`    | `Node<T>* next` | Puntero al siguiente nodo de la secuencia (o `nullptr` si es el último nodo de la secuencia). |
 
 <figure><img src="../.gitbook/assets/https___content.gitbook.com_content_XJ8cratcuUw79RTeMnO7_blobs_VOWV7Lc30SCPWpcBoIjJ_Captura%20de%20pantalla%20de%202023-09-19%2000-41-30.avif" alt=""><figcaption><p>Representación gráfica de objetos de la clase <code>Node&#x3C;T></code></p></figcaption></figure>
 
@@ -17,10 +17,9 @@ En esta práctica consideraremos una implementación **alternativa** de la inter
 
 La clase ofrecerá un método constructor:
 
-| Visibilidad | Método                                                                    | Descripción                                                                                                                                                                                |
-| ----------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `public`    | `Node(T data, Node<T>* next=nullptr)`                                     | Método constructor. `next` será `nullptr` en caso de que no se proporcione.                                                                                                                |
-| `public`    | `friend std::ostream& operator<<(std::ostream &out, const Node<T> &node)` | Sobrecarga global del operador `<<` para imprimir una instancia de `Node<T>` por pantalla. Se limitará a imprimir su atributo `data`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
+| `public` | `Node(T data, Node<T>* next=nullptr)`                                     | Método constructor. `next` será `nullptr` en caso de que no se proporcione.                                                                                                                |
+| -------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `public` | `friend std::ostream& operator<<(std::ostream &out, const Node<T> &node)` | Sobrecarga global del operador `<<` para imprimir una instancia de `Node<T>` por pantalla. Se limitará a imprimir su atributo `data`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
 
 ***
 
