@@ -56,6 +56,8 @@ Es muy importante que **declares virtuales los métodos `print()` y `set_vertice
 
 Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `Rectangle.cpp`, de acuerdo con la especificación del fichero de cabeceras `Rectangle.h`. Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
 
+***
+
 ## Actividad 15: Depuración de la clase Rectangle
 
 Guarda en nuestro directorio de trabajo (`PRA_2425_P1`), el siguiente fichero de código fuente `testRectangle.cpp`:
