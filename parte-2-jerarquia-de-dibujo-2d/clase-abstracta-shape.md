@@ -4,7 +4,7 @@
 
 Vamos a describir los métodos que conformarán la interfaz  `Shape`. Esta interfaz determinará un conjunto de operaciones básicas que se pueden realizar sobre una forma o figura concreta. `Shape` será una **clase abstracta**, por lo que **no será instanciable** (aunque podrá ofrecer métodos constructores a sus clases derivadas).
 
-<figure><img src="../.gitbook/assets/Gemini_Generated_Image_6hanam6hanam6han.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ChatGPT Image 22 may 2026, 13_20_50.png" alt=""><figcaption></figcaption></figure>
 
 ### Atributos
 
