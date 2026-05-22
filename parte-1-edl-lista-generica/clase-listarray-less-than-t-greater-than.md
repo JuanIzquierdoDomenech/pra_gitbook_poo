@@ -14,26 +14,24 @@ Esto implica que los métodos `insert()` y `remove()` de la interfaz deben reali
 
 #### Atributos <a href="#atributos" id="atributos"></a>
 
-| Visibilidad | Declaración                | Descripción                                                                                                                       |
-| ----------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| private     | `T* arr`                   | Puntero al inicio del array que almacenará los elementos de la lista de forma contigua. Estos elementos son de tipo `T` genérico. |
-| private     | `int max`                  | Tamaño actual del array. Podrá alterarse durante la vida de la lista, en caso necesario (ver método `resize(int)`).               |
-| private     | `int n`                    | Número de elementos que contiene la lista.                                                                                        |
-| private     | `static const int MINSIZE` | Tamaño mínimo del array. Deberá inicializarse a 2.                                                                                |
+| `private` | `T* arr`                   | Puntero al inicio del array que almacenará los elementos de la lista de forma contigua. Estos elementos son de tipo `T` genérico. |
+| --------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `private` | `int max`                  | Tamaño actual del array. Podrá alterarse durante la vida de la lista, en caso necesario (ver método `resize(int)`).               |
+| `private` | `int n`                    | Número de elementos que contiene la lista.                                                                                        |
+| `private` | `static const int MINSIZE` | Tamaño mínimo del array. Deberá inicializarse a 2.                                                                                |
 
-<figure><img src="../.gitbook/assets/https___content.gitbook.com_content_XJ8cratcuUw79RTeMnO7_blobs_2FPFVpgRwp4Iqnw3K7za_Captura%20de%20pantalla%20de%202023-09-24%2016-49-07.jpg" alt=""><figcaption><p>Representación gráfica de una lista implementada mediante una representación de secuencias basada en arrays.</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/https___content.gitbook.com_content_XJ8cratcuUw79RTeMnO7_blobs_2FPFVpgRwp4Iqnw3K7za_Captura%20de%20pantalla%20de%202023-09-24%2016-49-07.jpg" alt=""><figcaption><p>Representación gráfica de una lista implementada mediante una representación de secuencias basada en arrays</p></figcaption></figure>
 
 ### Métodos
 
 **Además de implementar los métodos públicos heredados de la interfaz** [**`List<T>`**](interfaz-list-less-than-t-greater-than.md), deberá definir e implementar los siguientes métodos adicionales:
 
-| <p><br>Visibilidad</p> | Método                                                                         | Descripción                                                                                                                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `public`               | `ListArray()`                                                                  | Método constructor sin argumentos. Se encargará de reservar memoria dinámica para crear un array de `MINSIZE` elementos de tipo `T`, además de inicializar el resto de atributos de instancia.                                          |
-| `public`               | `~ListArray()`                                                                 | Método destructor. Se encargará de liberar la memoria dinámica reservada.                                                                                                                                                               |
-| `public`               | `T operator[](int pos)`                                                        | Sobrecarga del operador `[]`. Devuelve el elemento situado en la posición **`pos`**. Lanza una excepción **`std::out_of_range`** si la posición no es válida (fuera del intervalo `[0, size()-1]`).                                     |
-| `public`               | `friend std::ostream& operator<<(std::ostream &out, const ListArray<T> &list)` | Sobrecarga global del operador `<<` para imprimir una instancia de `ListArray<T>` por pantalla. Recuerda incluir la cabecera `<ostream>` en el `.h`.                                                                                    |
-| `private`              | `void resize(int new_size)`                                                    | Método privado que se encargará de redimensionar el array al tamaño especificado, con el objetivo de incrementar su capacidad (si está lleno), o bien para reducirla (si está "demasiado vacío"). Ver nota más abajo para más detalles. |
+| `public`  | `ListArray()`                                                                  | Método constructor sin argumentos. Se encargará de reservar memoria dinámica para crear un array de `MINSIZE` elementos de tipo `T`, además de inicializar el resto de atributos de instancia.                                          |
+| --------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `public`  | `~ListArray()`                                                                 | Método destructor. Se encargará de liberar la memoria dinámica reservada.                                                                                                                                                               |
+| `public`  | `T operator[](int pos)`                                                        | Sobrecarga del operador `[]`. Devuelve el elemento situado en la posición **`pos`**. Lanza una excepción **`std::out_of_range`** si la posición no es válida (fuera del intervalo `[0, size()-1]`).                                     |
+| `public`  | `friend std::ostream& operator<<(std::ostream &out, const ListArray<T> &list)` | Sobrecarga global del operador `<<` para imprimir una instancia de `ListArray<T>` por pantalla. Recuerda incluir la cabecera `<ostream>` en el `.h`.                                                                                    |
+| `private` | `void resize(int new_size)`                                                    | Método privado que se encargará de redimensionar el array al tamaño especificado, con el objetivo de incrementar su capacidad (si está lleno), o bien para reducirla (si está "demasiado vacío"). Ver nota más abajo para más detalles. |
 
 **Detalles de implementación del método `resize(int)`:**
 
