@@ -148,4 +148,4 @@ a!=b --> false
 
 Si la semántica de tu salida es diferente, revisa tu código.&#x20;
 
-Finalmente, haz add y commit de `testPoint2D.cpp` y `Makefile` con git.
+Finalmente, haz add y _commit_ de `testPoint2D.cpp` y `Makefile` con git.
