@@ -14,6 +14,8 @@ Entra a tu cuenta de GitHub y **crea un repositorio público, vacío** (sin inic
 
 Copia la URL que se muestra tras la confirmación.
 
+***
+
 ## Actividad 1b. Clona el repositorio en tu equipo <a href="#actividad-1b.-clona-el-repositorio-en-tu-equipo" id="actividad-1b.-clona-el-repositorio-en-tu-equipo"></a>
 
 Abre una terminal Bash de Linux, sitúate en el directorio (`cd`) donde quieras mantener organizados tus repositorios git de la asignatura (p.e. `/home/TUUSUARIO/UPV/PRA/Lab`), y **clona el repositorio**:
