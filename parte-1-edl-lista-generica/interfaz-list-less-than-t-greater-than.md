@@ -69,7 +69,9 @@ git add List.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida interfaz genérica List"
+git commit -m "Add generic interface List"
 ```
 
 &#x20;Si lo crees conveniente, haz `git push` para enviar los cambios a tu repositorio remoto en GitHub.&#x20;
+
+<figure><img src="../.gitbook/assets/Captura_de_pantalla_2026-06-16_a_las_18_35_44.png" alt=""><figcaption></figcaption></figure>
