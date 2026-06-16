@@ -40,7 +40,7 @@ Tened en cuenta que `PRA_2627_P1` será nuestro directorio de trabajo durante to
 
 ### Actividad 1c. Añade el `.gitignore`
 
-De manera similar a la práctica 0, añade el fichero .gitignore al repositorio local y súbelo a Github en un primer commit.
+De manera similar a la práctica 0, genera con vim el fichero `.gitignore`, añadiéndoloa al repositorio local, y súbelo a Github en un primer commit.
 
 {% code title=".gitignore" %}
 ```markdown
@@ -115,6 +115,5 @@ Testing/
 
 # MacOS
 .DS_Store
-
 ```
 {% endcode %}
