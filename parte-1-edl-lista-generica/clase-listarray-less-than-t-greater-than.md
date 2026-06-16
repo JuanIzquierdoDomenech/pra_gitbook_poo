@@ -25,16 +25,14 @@ Esto implica que los métodos `insert()` y `remove()` de la interfaz deben reali
 
 ### Métodos
 
-**Primero, implementa los métodos públicos heredados de la interfaz** [**`List<T>`**](interfaz-list-less-than-t-greater-than.md)**.**
-
-Una vez hecho esto, esta clase deberá definir e implementar los siguientes métodos adicionales:
+**Además de sobrescribir los métodos públicos heredados de la interfaz** [**`List<T>`**](interfaz-list-less-than-t-greater-than.md) ,esta clase deberá definir e implementar los siguientes métodos adicionales:
 
 | Visibilidad | Método                                                                                                                                                           | Descripción                                                                                                                                                                                                                             |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `public`    | `ListArray()`                                                                                                                                                    | Método constructor sin argumentos. Se encargará de reservar memoria dinámica para crear un array de `MINSIZE` elementos de tipo `T`, además de inicializar el resto de atributos de instancia.                                          |
 | `public`    | `~ListArray()`                                                                                                                                                   | Método destructor. Se encargará de liberar la memoria dinámica reservada.                                                                                                                                                               |
 | `public`    | `T operator[](int pos)`                                                                                                                                          | Sobrecarga del operador `[]`. Devuelve el elemento situado en la posición **`pos`**. Lanza una excepción **`std::out_of_range`** si la posición no es válida (fuera del intervalo `[0, size()-1]`).                                     |
-| `public`    | <p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>ListArray&#x3C;T> &#x26;list)</code></p> | Sobrecarga global del operador `<<` para imprimir una instancia de `ListArray<T>` por pantalla.                                                                                                                                         |
+| `public`    | <p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>ListArray&#x3C;T> &#x26;list)</code></p> | Sobrecarga global del operador `<<` para imprimir una instancia de `ListArray<T>` por pantalla, es decir, los elementos que contiene.                                                                                                   |
 | `private`   | `void resize(int new_size)`                                                                                                                                      | Método privado que se encargará de redimensionar el array al tamaño especificado, con el objetivo de incrementar su capacidad (si está lleno), o bien para reducirla (si está "demasiado vacío"). Ver nota más abajo para más detalles. |
 
 **Detalles de implementación del método `resize(int)`:**
@@ -100,10 +98,10 @@ Guarda el fichero (modo comando -> `:w`) y, sin salir de vim, ejecuta el compila
 :!g++ -c ListArray.h  # Recuerda ejecutarlo desde el modo comando de vim!
 ```
 
-Comprueba la salida del compilador. En casos de existir errores (seria lo más normal), examínalos con calma y detenimiento, y pulsa `ENTER` para volver al buffer de Vim para empezar a corregirlos. Repite este proceso, tantas veces como sea necesario, hasta que hayas depurado tu solución.&#x20;
+Comprueba la salida del compilador. En casos de existir errores (si no tienes ninguno, ¡enhorabuena!, pero no sería lo normal), examínalos con calma y detenimiento, y pulsa `ENTER` para volver al buffer de Vim para empezar a corregirlos. Repite este proceso, tantas veces como sea necesario, hasta que hayas depurado tu solución.&#x20;
 
 {% hint style="info" %}
-Ten en cuenta que, al compilar un fichero `.h`, generará un fichero `.h.gch` (`ListArray.h.gch`) en lugar del "típico" `ListArray.o`. Ese fichero lo podemos eliminar sin problemas, no lo necesitaremos.
+Ten en cuenta que, al compilar un fichero `.h`, se puede generarar un fichero `.h.gch`  o `.h.pch` (p.ej., `ListArray.h.gch`) en lugar del "típico" `ListArray.o`. Ese fichero lo podemos eliminar sin problemas, no lo necesitaremos.
 {% endhint %}
 
 A continuación, añade el fichero al área de preparación de git:
@@ -115,7 +113,7 @@ git add ListArray.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase ListArray"
+git commit -m "Add ListArray class definition"
 ```
 
 {% hint style="success" %}
@@ -128,7 +126,7 @@ En general, debemos evitar confirmar versiones de ficheros con errores conocidos
 
 ## Actividad 4: Inicialización del fichero Makefile y depuración de la clase TestArray\<T>
 
-Guarda en nuestro directorio de trabajo (`PRA_2425_P1`), el siguiente fichero de código fuente `testListArray.cpp`:
+Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de código fuente `testListArray.cpp`:
 
 {% file src="../.gitbook/assets/testListArray.cpp" %}
 
@@ -139,7 +137,7 @@ Fíjate que, al importar el fichero `ListArray.h` no solo se importa la definici
 A continuación, procederemos a inicializar el fichero `Makefile` para automatizar el proceso de compilación del proyecto. Lo iremos actualizando y ampliando poco a poco, conforme lo vayamos necesitando. En esta primera fase, implementaremos dos reglas:
 
 * Una regla para generar el objetivo `bin/testListArray` (binario ejecutable). Este dependerá de tres ficheros: `List.h`, `ListArray.h`, y `testListArray.cpp`. &#x20;
-* Una regla `clean` que elimine todos los archivos `.o` y `.gch` generados en el directorio, así como el subdirectorio `bin`.&#x20;
+* Una regla `clean` que elimine todos los archivos `.o` y `.pch` / `.gch` generados en el directorio, así como el subdirectorio `bin`.&#x20;
 
 {% hint style="info" %}
 Para una mejor organización, los ficheros binarios ejecutables del proyecto se generaran en un subdirectorio denominado **`bin`**.
@@ -156,10 +154,10 @@ y añade las dos reglas:
 ```makefile
 bin/testListArray: testListArray.cpp ListArray.h List.h
         mkdir -p bin
-        g++ -o bin/testListArray testListArray.cpp ListArray.h
+        g++ -o bin/testListArray testListArray.cpp
 
 clean:
-        rm -r *.o *.gch bin
+        rm -r *.o *.gch *.pch bin
 ```
 
 {% hint style="warning" %}
@@ -246,7 +244,7 @@ git add testListArray.cpp Makefile ListArray.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadido Makefile y código de test de la clase ListArray"
+git commit -m "Add Makefile and test code for ListArray class"
 ```
 
 Este parece ser un buen momento para sincronizar tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
