@@ -25,7 +25,9 @@ Esto implica que los métodos `insert()` y `remove()` de la interfaz deben reali
 
 ### Métodos
 
-**Además de implementar los métodos públicos heredados de la interfaz** [**`List<T>`**](interfaz-list-less-than-t-greater-than.md), deberá definir e implementar los siguientes métodos adicionales:
+**Primero, implementa los métodos públicos heredados de la interfaz** [**`List<T>`**](interfaz-list-less-than-t-greater-than.md)**.**
+
+Una vez hecho esto, esta clase deberá definir e implementar los siguientes métodos adicionales:
 
 | Visibilidad | Método                                                                                                                                                           | Descripción                                                                                                                                                                                                                             |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
