@@ -35,7 +35,7 @@ Recuerda que la sobrecarga global de operadores binarios como `==` exige, en pri
 
 ## Actividad 9a: Declaración de la clase Point2D&#x20;
 
-Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de cabeceras `Point2D.h`.&#x20;
+Desde nuestro directorio de trabajo (`PRA_2627_P1`), crea con vim el fichero de cabeceras `Point2D.h`.&#x20;
 
 Dado que esta clase va a ser importada desde múltiples fuentes, **debemos envolver la definición de la clase dentro de una guarda de importación** _("include guard")_, usando las directivas del preprocesador `ifndef <VAR>` _(if-not-defined)_ y `define <VAR>`. Esto nos evitará los errores de compilación correspondientes a una importación múltiple:
 
