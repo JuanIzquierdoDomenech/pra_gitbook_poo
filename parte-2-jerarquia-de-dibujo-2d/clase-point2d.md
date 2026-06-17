@@ -92,13 +92,9 @@ En el .cpp no es necesario añadir a la firma de los métodos las palabras clave
 Añade al fichero `Makefile` la regla de compilación pertinente para generar su fichero `.o`:
 
 ```makefile
-Point2D.o: Point2D.h Point2D.cpp
+Point2D.o: Point2D.cpp Point2D.h
         g++ -c Point2D.cpp
 ```
-
-{% hint style="warning" icon="keyboard" %}
-Recuerda: **debes usar tabulador** (tecla `TAB`) para indentar los comandos de la regla.
-{% endhint %}
 
 A continuación, ejecuta la regla `testNode`:
 
@@ -110,14 +106,14 @@ Corrige los errores de compilación, en caso necesario, y añade los cambios de 
 
 ```bash
 git add Point2D.cpp Makefile
-git commit -m 'Añadida implementación de la clase Point2D; Makefile actualizado'
+git commit -m 'Add Point2D class and update Makefile'
 ```
 
 ***
 
 ## Actividad 10: Depuración de la clase Point2D&#x20;
 
-Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de código fuente `testPoint2D.cpp`, con el siguiente contenido:
+Desde nuestro directorio de trabajo (`PRA_2627_P1`), crea con vim el fichero de código fuente `testPoint2D.cpp`, con el siguiente contenido:
 
 ```cpp
 #include <iostream>
