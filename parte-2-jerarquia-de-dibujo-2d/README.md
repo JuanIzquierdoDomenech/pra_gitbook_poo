@@ -1,6 +1,6 @@
 # Parte 2: Jerarquía de dibujo 2D
 
-En esta segunda parte de la práctica diseñaremos e implementaremos una **jerarquía de clases que modele las entidades de una aplicación de dibujo 2D**. La aplicación gestionará un grupo de figuras mediante la estructra de datos [`List<T>`](/broken/pages/Q10Hz39t7LlTif9ygfvK) que hemos diseñado e implementado en la [Parte 1](/broken/pages/O4RVB36CZvhyowG6omiS). Se podrá optar por el uso de cualquiera de las dos implementaciones de dicha estructura de datos: mediante arrays (clase [`ListArray<T>`](/broken/pages/PNWljuHXcoJRj6sCyp8o)) o mediante nodos enlazados (clase [`ListLinked<T>`](/broken/pages/lDoYPk4qTjvEujfRe4bE)).&#x20;
+En esta segunda parte de la práctica diseñaremos e implementaremos una **jerarquía de clases que modele las entidades de una aplicación de dibujo 2D**. La aplicación gestionará un grupo de figuras mediante la estructura de datos `List<T>` que hemos diseñado e implementado en la [Parte 1](../parte-1-edl-lista-generica/). Se podrá optar por el uso de cualquiera de las dos implementaciones de dicha estructura de datos: mediante arrays (clase `ListArray<T>`) o mediante nodos enlazados (clase `ListLinked<T>`).&#x20;
 
 {% hint style="info" %}
 Ambas implementaciones presentan diferencias sustanciales en lo que respecta al coste computacional de las diferentes operaciones de la interfaz (especialmente en `get()`) . ¿Serías capaz de determinarlas?
