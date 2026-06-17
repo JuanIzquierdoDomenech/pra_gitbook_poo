@@ -13,22 +13,18 @@ El tipo de datos `Point2D`, que representa un punto bidimensional en el espacio 
 
 #### Métodos <a href="#metodos" id="metodos"></a>
 
-| Visibilidad | Perfil                                                                                                                                             | Descripción                                                                               |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `public`    | `Point2D(double x=0, double y=0)`                                                                                                                  | Método constructor. Por defecto, los ejes tomarán el valor 0.                             |
-| `public`    | `static double distance(const Point2D &a, const Point2D &b)`                                                                                       | Calcula la distancia euclidiana entre dos puntos `a` y `b`.                               |
-| `public`    | `bool operator==(const Point2D &a, const Point2D &b)`                                                                                              | Sobrecarga global del operador `==`. Comprueba si dos puntos son iguales.                 |
-| `public`    | `bool operator!=(const Point2D &a, const Point2D &b)`                                                                                              | Sobrecarga global del operador `!=`. Comprueba si dos puntos son diferentes.              |
-| `public`    | <p><code>std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const Point2D &#x26;p)</code></p> | Sobrecarga global del operador `<<`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
+| Visibilidad | Perfil                                                                                                                                                    | Descripción                                                                               |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `public`    | `Point2D(double x=0.0, double y=0.0)`                                                                                                                     | Método constructor. Por defecto, los ejes tomarán el valor 0.                             |
+| `public`    | `static double distance(const Point2D &a, const Point2D &b)`                                                                                              | Calcula la distancia euclidiana entre dos puntos `a` y `b`.                               |
+| `public`    | `bool operator==(const Point2D &other)`                                                                                                                   | Sobrecarga global del operador `==`. Comprueba si dos puntos son iguales.                 |
+| `public`    | `bool operator!=(const Point2D &other)`                                                                                                                   | Sobrecarga global del operador `!=`. Comprueba si dos puntos son diferentes.              |
+| `public`    | <p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const Point2D &#x26;p)</code></p> | Sobrecarga global del operador `<<`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
 
 {% hint style="info" icon="calculator-simple" %}
 La distancia euclidiana $$d$$ entre dos puntos bidimensionales $$a=(a_1,a_2)$$ y $$b = (b_1, b_2)$$ se calcula como sigue: $$d(a,b)=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2}$$.&#x20;
 
 Usa las funciones [`sqrt()`](https://en.cppreference.com/w/cpp/numeric/math/sqrt) y [`pow()`](https://es.cppreference.com/w/cpp/numeric/math/pow)de la librería [`<cmath>`](https://en.cppreference.com/w/cpp/header/cmath).
-{% endhint %}
-
-{% hint style="warning" icon="person-waving" %}
-Recuerda que la sobrecarga global de operadores binarios como `==` exige, en primer lugar, declarar en la clase el método `operator==()`, probablemente con el calificador **`friend`**(solo si se necesita acceder a atributos y/o métodos privados), y posteriormente implementar la función fuera del ámbito de la clase.
 {% endhint %}
 
 ***
@@ -61,9 +57,37 @@ git commit -m 'Añadida declaración de la clase Point2D'
 
 ***
 
-## Actividad 9b: Implementación de la clase Point2D
+## Actividad 9b: Definición de la clase Point2D
 
-Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de código fuente `Point2D.cpp`, de acuerdo con la especificación del fichero de cabeceras `Point2D.h`.&#x20;
+Desde nuestro directorio de trabajo (`PRA_2627_P1`), crea con vim el fichero de código fuente `Point2D.cpp`, y define sus métodos de acuerdo con la especificación del fichero de cabeceras `Point2D.h`.&#x20;
+
+{% code title="" %}
+```cpp
+#include <ostream>
+#include <cmath>
+#include "Point2D.h"
+
+double Point2D::distance(const Point2D &a, Point2D &b) {
+    // A definir
+}
+
+bool Point2D::operator==(const Point2D &other) {
+    // A definir
+}
+
+bool Point2D::operator!=(const Point2D &other) {
+    // A definir
+}
+
+std::ostream& operator<<(std::ostream &out, const Point2D &p) {
+    // A definir
+}
+```
+{% endcode %}
+
+{% hint style="info" %}
+En el .cpp no es necesario añadir a la firma de los métodos las palabras clave `static` ni `friend` en los métodos.
+{% endhint %}
 
 Añade al fichero `Makefile` la regla de compilación pertinente para generar su fichero `.o`:
 
