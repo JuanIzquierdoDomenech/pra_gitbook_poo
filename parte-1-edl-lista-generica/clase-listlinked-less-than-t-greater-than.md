@@ -49,6 +49,9 @@ Escribe en él la declaración de la clase genérica `ListLinked<T>`, de acuerdo
 <summary>Plantilla del fichero ListLinked.h</summary>
 
 ```cpp
+#ifndef LIST_LINKED_H
+#define LIST_LINKED_H
+
 #include <ostream>
 #include <stdexcept>
 #include "List.h"
@@ -65,6 +68,8 @@ class ListLinked : public List<T> {
 
         // ...
 };
+
+#endif LIST_LINKED_H
 ```
 
 </details>
