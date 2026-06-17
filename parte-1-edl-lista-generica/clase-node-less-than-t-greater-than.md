@@ -69,7 +69,7 @@ git add Node.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase Node"
+git commit -m "Add Node class implementation"
 ```
 
 ***
@@ -115,7 +115,7 @@ y añade la regla `bin/testNode`:
 
 <pre class="language-makefile"><code class="lang-makefile"><strong>bin/testNode: testNode.cpp Node.h
 </strong>        mkdir -p bin
-        g++ -o bin/testNode testNode.cpp Node.h
+        g++ -o bin/testNode testNode.cpp
 </code></pre>
 
 {% hint style="warning" %}
@@ -157,7 +157,7 @@ git add testNode.cpp Makefile Node.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadido código de test de la clase Node; Makefile actualizado"
+git commit -m "Add test for Node class; Makefile updated"
 ```
 
 Finalmente, sincroniza tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
