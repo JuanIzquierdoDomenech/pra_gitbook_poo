@@ -91,7 +91,7 @@ git add ListLinked.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadida implementación de la clase ListLinked"
+git commit -m "Add ListLinked class implementation"
 ```
 
 ***
