@@ -42,6 +42,9 @@ Escribe en él la declaración de la clase genérica `Node<T>`, de acuerdo con l
 <summary>Plantilla del fichero Node.h</summary>
 
 ```cpp
+#ifndef NODE_H
+#define NODE_H
+
 #include <ostream>
 
 template <typename T> 
@@ -50,6 +53,8 @@ class Node {
         // miembros públicos
     
 };
+
+#endif
 ```
 
 </details>
