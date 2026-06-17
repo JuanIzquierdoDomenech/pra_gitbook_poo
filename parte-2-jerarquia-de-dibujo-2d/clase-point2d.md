@@ -6,20 +6,11 @@ El tipo de datos `Point2D`, que representa un punto bidimensional en el espacio 
 
 #### Atributos <a href="#atributos" id="atributos"></a>
 
-| Visibilidad | Declaración | Descripción  |
-| ----------- | ----------- | ------------ |
-| `public`    | `double x`  | Coordenada x |
-| `public`    | `double y`  | Coordenada y |
+<table><thead><tr><th>Visibilidad</th><th width="179.35546875">Declaración</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>double x</code></td><td>Coordenada x</td></tr><tr><td><code>public</code></td><td><code>double y</code></td><td>Coordenada y</td></tr></tbody></table>
 
 #### Métodos <a href="#metodos" id="metodos"></a>
 
-| Visibilidad | Perfil                                                                                                                                                    | Descripción                                                                               |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `public`    | `Point2D(double x=0.0, double y=0.0)`                                                                                                                     | Método constructor. Por defecto, los ejes tomarán el valor 0.                             |
-| `public`    | `static double distance(const Point2D &a, const Point2D &b)`                                                                                              | Calcula la distancia euclidiana entre dos puntos `a` y `b`.                               |
-| `public`    | `bool operator==(const Point2D &other)`                                                                                                                   | Sobrecarga global del operador `==`. Comprueba si dos puntos son iguales.                 |
-| `public`    | `bool operator!=(const Point2D &other)`                                                                                                                   | Sobrecarga global del operador `!=`. Comprueba si dos puntos son diferentes.              |
-| `public`    | <p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const Point2D &#x26;p)</code></p> | Sobrecarga global del operador `<<`. Recuerda incluir la cabecera `<ostream>` en el `.h`. |
+<table><thead><tr><th width="108.4765625">Visibilidad</th><th>Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Point2D(double x=0.0, double y=0.0)</code></td><td>Método constructor. Por defecto, los ejes tomarán el valor 0.</td></tr><tr><td><code>public</code></td><td><code>static double distance(const Point2D &#x26;a, const Point2D &#x26;b)</code></td><td>Calcula la distancia euclidiana entre dos puntos <code>a</code> y <code>b</code>.</td></tr><tr><td><code>public</code></td><td><code>bool operator==(const Point2D &#x26;other)</code></td><td>Sobrecarga global del operador <code>==</code>. Comprueba si dos puntos son iguales.</td></tr><tr><td><code>public</code></td><td><code>bool operator!=(const Point2D &#x26;other)</code></td><td>Sobrecarga global del operador <code>!=</code>. Comprueba si dos puntos son diferentes.</td></tr><tr><td><code>public</code></td><td><p><code>friend std::ostream&#x26; operator&#x3C;&#x3C;(</code></p><p><code>std::ostream &#x26;out,</code> </p><p><code>const Point2D &#x26;p)</code></p></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code>. Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>.</td></tr></tbody></table>
 
 {% hint style="info" icon="calculator-simple" %}
 La distancia euclidiana $$d$$ entre dos puntos bidimensionales $$a=(a_1,a_2)$$ y $$b = (b_1, b_2)$$ se calcula como sigue: $$d(a,b)=\sqrt{(a_1-b_1)^2+(a_2-b_2)^2}$$.&#x20;
