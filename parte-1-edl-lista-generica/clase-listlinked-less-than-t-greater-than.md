@@ -198,7 +198,7 @@ git add testListLinked.cpp Makefile ListLinked.h
 y confirma los cambios con un mensaje informativo:
 
 ```bash
-git commit -m "Añadido código de test de la clase ListLinked; Makefile actualizado"
+git commit -m "Add ListLinked test file and update Makefile"
 ```
 
 Finalmente, sincroniza tu repositorio local con tu repositorio remoto de GitHub, para enviarle todos los cambios (_commits_) realizados localmente:
