@@ -88,6 +88,7 @@ De manera similar a la práctica 0, genera con vim el fichero `.gitignore`, aña
 build/
 Build/
 build-*/
+bin/
 
 # CMake generated files
 CMakeFiles/
