@@ -14,6 +14,7 @@ Vamos a describir los métodos que conformarán la interfaz genérica `List<T>`.
 | `int search(T e)`           | Devuelve la posición en la que se encuentra la primera ocurrencia del elemento **`e`**, o `-1` si no se encuentra.                                                          |
 | `bool empty()`              | Indica si la lista está vacía.                                                                                                                                              |
 | `int size()`                | Devuelve el número de elementos de la lista.                                                                                                                                |
+| `~List()`                   | Destructor virtual para activar polimorfismo: `virtual ~List() = default;`                                                                                                  |
 
 {% hint style="success" %}
 Trata de **reaprovechar al máximo el código** de estos métodos, **cuando sean implementados en las clases derivadas** [**ListArray\<T>**](clase-listarray-less-than-t-greater-than.md) **y** [**ListLinked\<T>**](clase-listlinked-less-than-t-greater-than.md). Por ejemplo, `append()` y `prepend()` son dos instancias particulares de `insert()`, ¿verdad?
