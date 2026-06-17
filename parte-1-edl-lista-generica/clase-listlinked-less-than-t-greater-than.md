@@ -50,6 +50,7 @@ Escribe en él la declaración de la clase genérica `ListLinked<T>`, de acuerdo
 
 ```cpp
 #include <ostream>
+#include <stdexcept>
 #include "List.h"
 #include "Node.h"
 
