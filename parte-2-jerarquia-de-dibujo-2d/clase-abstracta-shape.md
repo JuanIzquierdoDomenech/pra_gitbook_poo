@@ -80,4 +80,4 @@ void Shape::set_color(std::string c) {
 ```
 {% endcode %}
 
-Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
+Añade al fichero `Makefile` la regla de compilación pertinente (de manera similar a la regla `Point2D.o`). Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
