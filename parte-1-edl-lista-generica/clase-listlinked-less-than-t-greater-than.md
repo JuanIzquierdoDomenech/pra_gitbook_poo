@@ -63,6 +63,7 @@ class ListLinked : public List<T> {
     public:
 
         // ...
+};
 ```
 
 </details>
