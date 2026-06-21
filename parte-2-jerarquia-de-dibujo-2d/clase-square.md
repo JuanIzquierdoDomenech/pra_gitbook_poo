@@ -34,7 +34,7 @@ Desde nuestro directorio de trabajo, crea con vim el fichero de cabeceras `Squar
 
 ***
 
-## Actividad 16b: Implementación de la clase Square
+## Actividad 16b: Definición de la clase Square
 
 Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `Square.cpp`, de acuerdo con la especificación del fichero de cabeceras `Square.h`. Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
 
@@ -42,7 +42,7 @@ Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `
 
 ## Actividad 17: Depuración de la clase Square
 
-Guarda en nuestro directorio de trabajo (`PRA_2425_P1`), el siguiente fichero de código fuente `testSquare.cpp`:
+Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de código fuente `testSquare.cpp`:
 
 {% file src="../.gitbook/assets/testSquare.cpp" %}
 
