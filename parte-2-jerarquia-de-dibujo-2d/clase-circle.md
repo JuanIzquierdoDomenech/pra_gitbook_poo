@@ -2,7 +2,52 @@
 
 ## Descripción de la clase
 
-El tipo de datos Circle, que representa un círculo en un espacio bidimensional, estará definido por una clase concreta de igual nombre, derivada de la interfaz Shape.
+El tipo de datos `Circle`, que representa un círculo en un espacio bidimensional, estará definido por una clase concreta de igual nombre, derivada de la interfaz `Shape`.
+
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+        #string color
+        +Shape()
+        +Shape(color : string)
+        +get_color() string
+        +set_color(c : string) void
+        +area() double
+        +perimeter() double
+        +translate(incX : double, incY : double) void
+        +print() void
+    }
+
+    class Circle {
+        -Point2D center
+        -double radius
+        +Circle()
+        +Circle(color : string, center : Point2D, radius : double)
+        +get_center() Point2D
+        +set_center(p : Point2D) void
+        +get_radius() double
+        +set_radius(r : double) void
+        +area() double
+        +perimeter() double
+        +translate(incX : double, incY : double) void
+        +print() void
+        +operator<<(out : ostream, c : Circle) ostream
+    }
+
+    class Point2D {
+        +double x
+        +double y
+        +Point2D(double x, double y)
+        +distance(a : Point2D, b : Point2D) double
+        +operator==(other : Point2D) bool
+        +operator!=(other : Point2D) bool
+        +operator<<(out : ostream, p : Point2D) ostream
+    }
+
+    Shape <|-- Circle
+    Circle *-- Point2D
+```
 
 ### Atributos
 
