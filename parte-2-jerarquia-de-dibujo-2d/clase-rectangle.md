@@ -59,10 +59,6 @@ class Rectangle : ??? {
 
 Recuerda que debe declarar las funciones que se sobreescriben. Comprueba que la sintaxis es correcta, y finalmente añade el fichero al repositorio git.
 
-{% hint style="danger" %}
-Es muy importante que **declares virtuales los métodos `print()` y `set_vertices()`, para que sean polimórficos** (ten en cuenta que la clase derivada [`Square`](clase-square.md) los sobreescribirá).
-{% endhint %}
-
 ***
 
 ## Actividad 14b: Definición de la clase Rectangle
