@@ -2,7 +2,41 @@
 
 ## Descripción de la clase
 
-El tipo de datos Rectangle, que representa un rectángulo en un espacio bidimensional, estará definido por una clase concreta de igual nombre, derivada de la interfaz Shape.
+El tipo de datos `Rectangle`, que representa un rectángulo en un espacio bidimensional, estará definido por una clase concreta de igual nombre, derivada de la interfaz `Shape`.
+
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+    }
+
+    class Point2D
+
+    class Circle
+
+    class Rectangle {
+        #Point2D* vs
+        -check(vertices : Point2D*) bool
+        +N_VERTICES : int const
+        +Rectangle()
+        +Rectangle(color : string, vertices : Point2D*)
+        +Rectangle(r : Rectangle)
+        +~Rectangle()
+        +get_vertex(ind : int) Point2D
+        +operator[](ind : int) Point2D
+        +set_vertices(vertices : Point2D*) void
+        +operator=(r : Rectangle) Rectangle
+        +operator<<(out : ostream, r : Rectangle) ostream
+        +area() double
+        +perimeter() double
+        +translate(incX : double, incY : double) void
+        +print() void
+    }
+
+    Shape <|-- Circle
+    Shape <|-- Rectangle
+    Rectangle *-- Point2D
+```
 
 ### Atributos
 
