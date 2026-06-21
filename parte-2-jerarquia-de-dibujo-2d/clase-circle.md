@@ -15,7 +15,7 @@ El tipo de datos Circle, que representa un círculo en un espacio bidimensional,
 <table><thead><tr><th width="129">Visibilidad</th><th width="372">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Circle()</code></td><td>Método constructor por defecto. Crea un círculo del color que se haya establecido por defecto, centro (0,0) y radio 1.</td></tr><tr><td><code>public</code></td><td><code>Circle(std::string color, Point2D center, double radius)</code></td><td>Método constructor (con parámetros). No se permiten radios negativos (excepción).</td></tr><tr><td><code>public</code></td><td><code>Point2D get_center() const</code></td><td>Método consultor del atributo <code>center</code>.</td></tr><tr><td><code>public</code></td><td><code>void set_center(Point2D p)</code></td><td>Método modificador del atributo <code>center</code>.</td></tr><tr><td><code>public</code></td><td><code>double get_radius() const</code></td><td>Método consultor del atributo <code>radius</code>.</td></tr><tr><td><code>public</code></td><td><code>void set_radius(double r)</code></td><td>Método modificador del atributo <code>radius</code>. No se permiten radios negativos (excepción)</td></tr><tr><td><code>public</code></td><td><code>std::ostream&#x26; operator&#x3C;&#x3C;(std::ostream &#x26;out, const Circle &#x26;c)</code></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code>. <br><br>Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>, así como declararlo <code>friend</code> en la clase.</td></tr></tbody></table>
 
 {% hint style="success" %}
-Intenta reaprovechar la implementación del método abstracto `print()` (interfaz de `Shape`)  en  `operator<<()` (o viceversa), para evitar duplicidad de código.
+Aprovecha que sobreescribes el `operator<<` en la clase para simpificar la sobrescritura del método `print()`.
 {% endhint %}
 
 ***
@@ -46,7 +46,7 @@ Comprueba que la sintaxis es correcta, y finalmente añade el fichero al reposit
 
 ***
 
-## Actividad 12b: Implementación de la clase Circle
+## Actividad 12b: Definición de la clase Circle
 
 Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `Circle.cpp`, de acuerdo con la especificación del fichero de cabeceras `Circle.h`.&#x20;
 
@@ -60,7 +60,7 @@ Usa la función  [`pow()`](https://es.cppreference.com/w/cpp/numeric/math/pow)de
 Recuerda que $$\pi = 3.141592$$.
 {% endhint %}
 
-Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
+Añade al fichero `Makefile` la regla de compilación pertinente (similar a la de `Shape`). Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
 
 ***
 
@@ -103,7 +103,7 @@ bin/testCircle: testCircle.cpp Circle.o Shape.o Point2D.o
 Notar como `testCircle` no solo depende de `Circle.o`, también de `Shape.o` y `Point2D.o`.
 {% endhint %}
 
-Finalmente, ejecuta el binario para comprobar que tu implementación es correcta:
+Finalmente, ejecuta la regla y luego el binario para comprobar que tu implementación es correcta:
 
 ```bash
 ./bin/testCircle
