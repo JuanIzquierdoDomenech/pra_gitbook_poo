@@ -21,7 +21,7 @@ Considera hacer uso del método estático [`Point2D::distance()`](clase-point2d.
 {% endhint %}
 
 {% hint style="success" %}
-Intenta reaprovechar el método `print()` (interfaz de `Shape`)  en  `operator<<()` (o viceversa), para evitar duplicidad de código.
+Aprovecha que sobreescribes el `operator<<` en la clase para simpificar la sobrescritura del método `print()`.
 {% endhint %}
 
 ***
