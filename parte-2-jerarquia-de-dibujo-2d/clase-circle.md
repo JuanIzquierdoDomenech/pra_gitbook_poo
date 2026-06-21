@@ -8,16 +8,9 @@ El tipo de datos `Circle`, que representa un círculo en un espacio bidimensiona
 classDiagram
     class Shape {
         <<abstract>>
-        #string color
-        +Shape()
-        +Shape(color : string)
-        +get_color() string
-        +set_color(c : string) void
-        +area() double
-        +perimeter() double
-        +translate(incX : double, incY : double) void
-        +print() void
     }
+
+    class Point2D
 
     class Circle {
         -Point2D center
@@ -33,16 +26,6 @@ classDiagram
         +translate(incX : double, incY : double) void
         +print() void
         +operator<<(out : ostream, c : Circle) ostream
-    }
-
-    class Point2D {
-        +double x
-        +double y
-        +Point2D(double x, double y)
-        +distance(a : Point2D, b : Point2D) double
-        +operator==(other : Point2D) bool
-        +operator!=(other : Point2D) bool
-        +operator<<(out : ostream, p : Point2D) ostream
     }
 
     Shape <|-- Circle
