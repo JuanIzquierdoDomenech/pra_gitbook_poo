@@ -4,6 +4,19 @@
 
 El tipo de datos `Point2D`, que representa un punto bidimensional en el espacio cartesiano, estará definido por una clase concreta de igual nombre.
 
+```mermaid
+classDiagram
+    class Point2D {
+        +double x
+        +double y
+        +Point2D(double x, double y)
+        +distance(a : Point2D, b : Point2D) double
+        +operator==(other : Point2D) bool
+        +operator!=(other : Point2D) bool
+        +operator<<(out : ostream, p : Point2D) ostream
+    }
+```
+
 #### Atributos <a href="#atributos" id="atributos"></a>
 
 <table><thead><tr><th>Visibilidad</th><th width="179.35546875">Declaración</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>double x</code></td><td>Coordenada x</td></tr><tr><td><code>public</code></td><td><code>double y</code></td><td>Coordenada y</td></tr></tbody></table>
