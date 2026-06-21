@@ -25,12 +25,17 @@ Intenta reaprovechar la implementación del método abstracto `print()` (interfa
 Desde nuestro directorio de trabajo, crea con vim el fichero de cabeceras `Circle.h`. Aquí tienes una plantilla:
 
 ```cpp
+#ifndef CIRCLE_H
+#define CIRCLE_H
+
 #include <iostream>
 #include "Shape.h"
 
 class Circle : public Shape {
     // ...
 };
+
+#endif
 ```
 
 {% hint style="warning" %}
