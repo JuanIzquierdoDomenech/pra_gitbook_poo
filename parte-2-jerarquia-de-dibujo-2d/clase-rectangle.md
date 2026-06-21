@@ -39,7 +39,9 @@ Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de 
 #include "Shape.h"
 #include "Point2D.h"
 
-// ...
+class Rectangle : ??? {
+    //...
+};
 
 #endif
 ```
