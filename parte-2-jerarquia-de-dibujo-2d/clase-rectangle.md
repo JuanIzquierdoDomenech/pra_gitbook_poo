@@ -34,7 +34,6 @@ Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de 
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include <stdexcept>
 #include <iostream>
 #include "Shape.h"
 #include "Point2D.h"
@@ -54,7 +53,7 @@ Es muy importante que **declares virtuales los métodos `print()` y `set_vertice
 
 ***
 
-## Actividad 14b: Implementación de la clase Rectangle
+## Actividad 14b: Definición de la clase Rectangle
 
 Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `Rectangle.cpp`, de acuerdo con la especificación del fichero de cabeceras `Rectangle.h`. Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
 
@@ -62,7 +61,7 @@ Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `
 
 ## Actividad 15: Depuración de la clase Rectangle
 
-Guarda en nuestro directorio de trabajo (`PRA_2425_P1`), el siguiente fichero de código fuente `testRectangle.cpp`:
+Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de código fuente `testRectangle.cpp`:
 
 {% file src="../.gitbook/assets/testRectangle.cpp" %}
 
