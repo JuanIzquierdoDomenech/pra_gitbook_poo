@@ -18,6 +18,18 @@ El tipo de datos Circle, que representa un círculo en un espacio bidimensional,
 Aprovecha que sobreescribes el `operator<<` en la clase para simpificar la sobrescritura del método `print()`.
 {% endhint %}
 
+#### Area:
+
+$$
+A = \pi r^2
+$$
+
+#### Perímetro:
+
+$$
+P = 2 \pi r
+$$
+
 ***
 
 ## Actividad 12a: Declaración de la clase Circle&#x20;

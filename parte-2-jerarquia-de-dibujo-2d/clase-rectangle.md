@@ -40,7 +40,7 @@ $$
 
 ## Actividad 14a: Declaración de la clase Rectangle
 
-Desde nuestro directorio de trabajo (`PRA_2425_P1`), crea con vim el fichero de cabeceras `Rectangle.h`. Dado que esta clase va a ser importada desde múltiples fuentes, **debemos envolver la definición de la clase dentro de una guarda de importación** _("include guard")_, usando las directivas del preprocesador `ifndef <VAR>` _(if-not-defined)_ y `define <VAR>`. Esto nos evitará los errores de compilación correspondientes a una importación múltiple. Aquí tienes una plantilla:
+Desde nuestro directorio de trabajo (`PRA_2627_P1`), crea con vim el fichero de cabeceras `Rectangle.h`. Dado que esta clase va a ser importada desde múltiples fuentes, **debemos envolver la definición de la clase dentro de una guarda de importación** _("include guard")_, usando las directivas del preprocesador `ifndef <VAR>` _(if-not-defined)_ y `define <VAR>`. Esto nos evitará los errores de compilación correspondientes a una importación múltiple. Aquí tienes una plantilla:
 
 ```cpp
 #ifndef RECTANGLE_H
