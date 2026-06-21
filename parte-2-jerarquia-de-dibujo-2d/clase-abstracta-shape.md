@@ -6,6 +6,22 @@ Vamos a describir los métodos que conformarán la interfaz  `Shape`. Esta inter
 
 <figure><img src="../.gitbook/assets/ChatGPT Image 22 may 2026, 13_20_50.png" alt=""><figcaption></figcaption></figure>
 
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+        #string color
+        +Shape()
+        +Shape(color : string)
+        +get_color() string
+        +set_color(c : string) void
+        +area() double
+        +perimeter() double
+        +translate(incX : double, incY : double) void
+        +print() void
+    }
+```
+
 ### Atributos
 
 <table><thead><tr><th width="129">Visibilidad</th><th width="193.671875">Declaración</th><th>Descripción</th></tr></thead><tbody><tr><td><code>protected</code></td><td><code>std::string color</code></td><td>Color de la figura. Solo podrá ser uno de estos tres valores: "red", "green", "blue".</td></tr></tbody></table>
