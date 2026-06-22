@@ -27,6 +27,38 @@ La clase `Drawing` sera la encargada de modelar un dibujo de figuras 2D. Gestion
 
 El orden de los elementos de la lista determinará su precedencia en el dibujo, en caso de existir superposición de figuras: el primer elemento de la lista será el que aparecerá al frente, mientras que el último elemento aparecerá al fondo.
 
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+    }
+
+    class Point2D
+
+    class Circle
+
+    class Rectangle
+
+    class Square
+
+    class Drawing {
+        -List~Shape*~* shapes
+        +Drawing()
+        +~Drawing()
+        +add_front(shape : Shape*) void
+        +add_back(shape : Shape*) void
+        +print_all() void
+        +get_area_all_circles() double
+        +move_squares(incX : double, incY : double) void
+    }
+
+    Shape <|-- Circle
+    Shape <|-- Rectangle
+    Rectangle <|-- Square
+    Rectangle *-- Point2D
+    Drawing o-- "1..*" Shape
+```
+
 ### Atributos
 
 <table><thead><tr><th width="129">Visibilidad</th><th width="278">Declaración</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>List&#x3C;Shape*>* shapes</code></td><td>Lista de figuras representadas en el dibujo. </td></tr></tbody></table>
@@ -47,7 +79,7 @@ Si no tienes una implementación funcional de `ListArray<T>` o de `ListLinked<T>
 
 La clase `Drawing` ofrece un conjunto reducido de métodos, ya que incorporar "todas" las funcionalidades de una aplicación de dibujo se aleja de nuestros objetivos. Las funcionalidades que se plantean aquí van dirigidas a trabajar los conceptos de programación avanzada que se han visto en el bloque 1 de teoría. Si te apetece, puedes añadir otros métodos (funcionalidades) que se te ocurran para manipular los elementos del dibujo.&#x20;
 
-<table><thead><tr><th width="129">Visibilidad</th><th width="296.3671875">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Drawing()</code></td><td>Método constructor. Reserva memoria dinámica para el atributo <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>~Drawing()</code></td><td>Método destructor. Libera la memoria dinámica reservada por <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>void add_front(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al frente del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void add_back(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al fondo del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void print_all()</code></td><td>Muestra por pantalla información de todas las figuras del dibujo.</td></tr><tr><td><code>public</code></td><td><code>double get_area_all_circles()</code></td><td>Devuelve el área ocupada por todos los círculos presentes en el dibujo.</td></tr><tr><td><code>public</code></td><td><code>move_squares(double incX, double incY)</code></td><td>Mueve todos los cuadrados del dibujo, aplicando los incrementos de X e Y proporcionados.</td></tr></tbody></table>
+<table><thead><tr><th width="129">Visibilidad</th><th width="296.3671875">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Drawing()</code></td><td>Método constructor. Reserva memoria dinámica para el atributo <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>~Drawing()</code></td><td>Método destructor. Libera la memoria dinámica reservada por <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>void add_front(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al frente del dibujo (al inicio de la lista).</td></tr><tr><td><code>public</code></td><td><code>void add_back(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al fondo del dibujo (al final de la lista).</td></tr><tr><td><code>public</code></td><td><code>void print_all()</code></td><td>Muestra por pantalla información de todas las figuras del dibujo (no uses <code>&#x3C;iostream></code>, reaprovecha funcionalidad).</td></tr><tr><td><code>public</code></td><td><code>double get_area_all_circles()</code></td><td>Devuelve el área ocupada por todos los círculos presentes en el dibujo. Puedes usar un <code>dynamic_cast&#x3C;Circle*></code> para convertir un <code>Shape*</code> a <code>Circle*</code>.</td></tr><tr><td><code>public</code></td><td><code>move_squares(double incX, double incY)</code></td><td>Mueve todos los cuadrados del dibujo, aplicando los incrementos de X e Y proporcionados. De nuevo, puedes usar <code>dynamic_cast</code> para convertir un <code>Shape*</code> a un <code>Square*</code>.</td></tr></tbody></table>
 
 ***
 
@@ -71,10 +103,11 @@ Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de
 
 A continuación, añade una regla `bin/testDrawing` a tu `Makefile` para generar el binario ejecutable homónimo:&#x20;
 
-```
+```makefile
 bin/testDrawing: testDrawing.cpp Drawing.o Square.o Rectangle.o Circle.o Shape.o Point2D.o
-        mkdir -p bin
-        g++ -o bin/testDrawing testDrawing.cpp Drawing.o Square.o Rectangle.o Circle.o Shape.o Point2D.o
+	g++ -c testDrawing.cpp
+	mkdir -p bin
+	g++ -o bin/testDrawing testDrawing.cpp Drawing.o Square.o Rectangle.o Circle.o Shape.o Point2D.o
 ```
 
 {% hint style="info" icon="binoculars" %}

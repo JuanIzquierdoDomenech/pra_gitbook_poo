@@ -51,6 +51,6 @@ Shape <|-- Rectangle : is-a
 Rectangle <|-- Square : is-a
 
 Circle --> Point2D : has-a
-Rectangle --> Point2D : has-a
-Drawing --> Shape : has-a
+Rectangle --> Point2D : has-four
+Drawing --> Shape : has-many
 ```
