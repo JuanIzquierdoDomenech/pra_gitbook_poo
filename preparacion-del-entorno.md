@@ -64,7 +64,7 @@ Tened en cuenta que `PRA_2627_P1` será nuestro directorio de trabajo durante to
 De manera similar a la práctica 0, genera con vim el fichero `.gitignore`, añadiéndoloa al repositorio local, y súbelo a Github en un primer commit.
 
 {% code title=".gitignore" %}
-```markdown
+```bash
 # Prerequisites
 *.d
 
