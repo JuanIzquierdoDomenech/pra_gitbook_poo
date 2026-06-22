@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Entrega y evaluación de la práctica
 
 El proyecto resultante **no se entregará ni se evaluará de manera "formal"**. Por ello, no existe una fecha límite para su realización. Incluso se puede decir que su realización es opcional. Ahora bien, debéis considerar lo siguiente:

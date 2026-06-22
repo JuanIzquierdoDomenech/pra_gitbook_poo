@@ -47,7 +47,7 @@ Si no tienes una implementación funcional de `ListArray<T>` o de `ListLinked<T>
 
 La clase `Drawing` ofrece un conjunto reducido de métodos, ya que incorporar "todas" las funcionalidades de una aplicación de dibujo se aleja de nuestros objetivos. Las funcionalidades que se plantean aquí van dirigidas a trabajar los conceptos de programación avanzada que se han visto en el bloque 1 de teoría. Si te apetece, puedes añadir otros métodos (funcionalidades) que se te ocurran para manipular los elementos del dibujo.&#x20;
 
-<table><thead><tr><th width="129">Visibilidad</th><th width="326">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Drawing()</code></td><td>Método constructor. Reserva memoria dinámica para el atributo <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>~Drawing()</code></td><td>Método destructor. Libera la memoria dinámica reservada por <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>void add_front(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al frente del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void add_back(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al fondo del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void print_all()</code></td><td>Muestra por pantalla información de todas las figuras del dibujo.</td></tr><tr><td><code>public</code></td><td><code>double get_area_all_circles()</code></td><td>Devuelve el área ocupada por todos los círculos presentes en el dibujo.</td></tr><tr><td><code>public</code></td><td><code>move_squares(double incX, double incY)</code></td><td>Mueve todos los cuadrados del dibujo, aplicando los incrementos de X e Y proporcionados.</td></tr></tbody></table>
+<table><thead><tr><th width="129">Visibilidad</th><th width="296.3671875">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Drawing()</code></td><td>Método constructor. Reserva memoria dinámica para el atributo <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>~Drawing()</code></td><td>Método destructor. Libera la memoria dinámica reservada por <code>shapes</code>.</td></tr><tr><td><code>public</code></td><td><code>void add_front(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al frente del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void add_back(Shape* shape)</code></td><td>Añade la figura <code>shape</code> al fondo del dibujo.</td></tr><tr><td><code>public</code></td><td><code>void print_all()</code></td><td>Muestra por pantalla información de todas las figuras del dibujo.</td></tr><tr><td><code>public</code></td><td><code>double get_area_all_circles()</code></td><td>Devuelve el área ocupada por todos los círculos presentes en el dibujo.</td></tr><tr><td><code>public</code></td><td><code>move_squares(double incX, double incY)</code></td><td>Mueve todos los cuadrados del dibujo, aplicando los incrementos de X e Y proporcionados.</td></tr></tbody></table>
 
 ***
 
@@ -57,7 +57,7 @@ Desde nuestro directorio de trabajo, crea con vim el fichero de cabeceras `Drawi
 
 ***
 
-## Actividad 18b: Implementación de la clase Drawing
+## Actividad 18b: Definición de la clase Drawing
 
 Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `Drawing.cpp`, de acuerdo con la especificación del fichero de cabeceras `Drawing.h`. Añade al fichero `Makefile` la regla de compilación pertinente. Corrige los errores de compilación, en caso necesario, y añade los cambios de ambos ficheros al repositorio git.&#x20;
 
@@ -65,7 +65,7 @@ Desde nuestro directorio de trabajo, crea con vim el fichero de código fuente `
 
 ## Actividad 19: Depuración de la clase Drawing
 
-Guarda en nuestro directorio de trabajo (`PRA_2425_P1`), el siguiente fichero de código fuente `testDrawing.cpp`:
+Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de código fuente `testDrawing.cpp`:
 
 {% file src="../.gitbook/assets/testDrawing.cpp" %}
 

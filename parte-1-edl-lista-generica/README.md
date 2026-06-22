@@ -1,3 +1,24 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Parte 1: EDL Lista genérica
 
 En esta primera parte de la práctica diseñaremos una **interfaz genérica para una estructura de datos lineal de tipo lista**, y realizaremos **dos implementaciones de la misma**, basadas en las dos aproximaciones que conocemos de la asignatura "Programación" del semestre 1B de GIIR: **representación de secuencias en memoria contigua** (arrays) y **dispersa** (nodos enlazados).
