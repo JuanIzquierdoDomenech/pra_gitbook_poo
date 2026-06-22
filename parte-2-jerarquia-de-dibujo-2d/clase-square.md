@@ -4,6 +4,33 @@
 
 El tipo de datos `Square`, que representa un cuadrado en un espacio bidimensional, estará definido por una clase concreta de igual nombre, **derivada de la clase** [**`Rectangle`**](clase-rectangle.md)**.**
 
+```mermaid
+classDiagram
+    class Shape {
+        <<abstract>>
+    }
+
+    class Point2D
+
+    class Circle
+
+    class Rectangle
+
+    class Square {
+        -check(vertices : Point2D*) bool
+        +Square()
+        +Square(color : string, vertices : Point2D*)
+        +set_vertices(vertices : Point2D*) void
+        +print() void
+        +operator<<(out : ostream, s : Square) ostream
+    }
+
+    Shape <|-- Circle
+    Shape <|-- Rectangle
+    Rectangle <|-- Square
+    Rectangle *-- Point2D
+```
+
 ### Atributos
 
 Esta clase no define nuevos atributos.
@@ -20,7 +47,7 @@ De nuevo, considera hacer uso del método estático [`Point2D::distance()`](clas
 
 Además, deberá implementar los siguientes métodos:
 
-<table><thead><tr><th width="129">Visibilidad</th><th width="326">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>private</code></td><td><code>static bool check(Point2D* vertices)</code></td><td>Comprueba, a partir de un array de 4 objetos <code>Point2D</code> proporcionado como parámetro, si esos vértices conforman un <strong>cuadrado</strong> válido. </td></tr><tr><td><code>public</code></td><td><code>Square()</code></td><td>Método constructor por defecto. Creará un cuadrado con el color que esté establecido por defecto, y los vértices v0=(-1,1); v1=(1,1), v2=(1,-1), y v3=(-1,-1).</td></tr><tr><td><code>public</code></td><td><code>Square(std::string color, Point2D* vertices)</code></td><td>Método constructor. Recibe como parámetro un array de <code>Point2D</code>, de tamaño 4, que contendrá los vértices v0, v1, v2 y v3 (en ese orden). Si esos vértices no conforman un <strong>cuadrado</strong> válido, lanzará una excepción <strong><code>std::invalid_argument</code></strong>.</td></tr><tr><td><code>public</code></td><td><code>void set_vertices(Point2D* vertices)</code></td><td>Modifica los vértices del cuadrado, a partir de un array de <code>Point2D</code> de tamaño 4, que contendrá los vértices v0, v1, v2 y v3 (en ese orden). Si esos vértices no conforman un <strong>cuadrado</strong> válido, lanzará una excepción <strong><code>std::invalid_argument</code></strong>.</td></tr><tr><td><code>public</code></td><td><code>ostream&#x26; operator&#x3C;&#x3C;(ostream &#x26;out, const Square &#x26;square)</code></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code>. <br><br>Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>, así como declararlo <code>friend</code> en la clase.</td></tr></tbody></table>
+<table><thead><tr><th width="129">Visibilidad</th><th width="239.8671875">Perfil</th><th>Descripción</th></tr></thead><tbody><tr><td><code>public</code></td><td><code>Square()</code></td><td>Método constructor por defecto. Creará un cuadrado con el color que esté establecido por defecto, y los vértices v0=(-1,1); v1=(1,1), v2=(1,-1), y v3=(-1,-1).</td></tr><tr><td><code>public</code></td><td><code>Square(std::string color, Point2D* vertices)</code></td><td>Método constructor. Recibe como parámetro un array de <code>Point2D</code>, de tamaño 4, que contendrá los vértices v0, v1, v2 y v3 (en ese orden). Si esos vértices no conforman un <strong>cuadrado</strong> válido, lanzará una excepción <strong><code>std::invalid_argument</code></strong>.</td></tr><tr><td><code>public</code></td><td><code>void set_vertices(Point2D* vertices)</code></td><td>Modifica los vértices del cuadrado, a partir de un array de <code>Point2D</code> de tamaño 4, que contendrá los vértices v0, v1, v2 y v3 (en ese orden). Si esos vértices no conforman un <strong>cuadrado</strong> válido, lanzará una excepción <strong><code>std::invalid_argument</code></strong>.</td></tr><tr><td><code>public</code></td><td><code>ostream&#x26; operator&#x3C;&#x3C;(ostream &#x26;out, const Square &#x26;square)</code></td><td>Sobrecarga global del operador <code>&#x3C;&#x3C;</code>. <br><br>Recuerda incluir la cabecera <code>&#x3C;ostream></code> en el <code>.h</code>, así como declararlo <code>friend</code> en la clase.</td></tr><tr><td><code>private</code></td><td><code>static bool check(Point2D* vertices)</code></td><td>Comprueba, a partir de un array de 4 objetos <code>Point2D</code> proporcionado como parámetro, si esos vértices conforman un <strong>cuadrado</strong> válido. </td></tr></tbody></table>
 
 {% hint style="success" %}
 Intenta reaprovechar el método `print()` (heredado de `Rectangle`)  en  `operator<<()` (o viceversa), para evitar duplicidad de código.
@@ -46,10 +73,19 @@ Guarda en nuestro directorio de trabajo (`PRA_2627_P1`), el siguiente fichero de
 
 {% file src="../.gitbook/assets/testSquare.cpp" %}
 
-A continuación, añade una regla `bin/testSquare` a tu `Makefile` para generar el binario ejecutable homónimo. Puedes usar la regla `bin/testRectangle` para inspirarte.&#x20;
+A continuación, añade la siguiente regla `bin/testSquare` a tu `Makefile` para generar el binario ejecutable homónimo.
 
-{% hint style="warning" %}
-Ten en cuenta que el enlazador necesitará el código objeto de los métodos heredados de `Rectangle`, por lo que también existirá una dependencia directa con el fichero de código objeto `Rectangle.o`.
+{% code title="" %}
+```makefile
+bin/testSquare: testSquare.cpp Square.o Rectangle.o Shape.o Point2D.o
+	g++ -c testSquare.cpp
+	mkdir -p bin
+	g++ -o bin/testSquare testSquare.o Square.o Rectangle.o Shape.o Point2D.o
+```
+{% endcode %}
+
+{% hint style="warning" icon="eyes" %}
+Fíjate que el enlazador necesitará el código objeto de los métodos heredados de `Rectangle`, por lo que también existe una dependencia directa con el fichero de código objeto `Rectangle.o`.
 {% endhint %}
 
 Finalmente, ejecuta el binario para comprobar que tu implementación es correcta:
