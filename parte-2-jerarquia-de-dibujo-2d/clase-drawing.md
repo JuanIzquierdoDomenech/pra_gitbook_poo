@@ -1,10 +1,31 @@
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+  actions:
+    visible: true
+---
+
 # Clase Drawing
 
 ## Descripción de la clase
 
 La clase `Drawing` sera la encargada de modelar un dibujo de figuras 2D. Gestionará una lista de figuras, mediante la clase polimórfica y abstracta [`Shape`](clase-abstracta-shape.md) como interfaz para acceder a cualquiera de las clases derivadas. De forma similar, se usará la interfaz [`List<T>`](../parte-1-edl-lista-generica/interfaz-list-less-than-t-greater-than.md) para acceder a cualquiera de sus dos implementaciones [`ListArray<T>`](../parte-1-edl-lista-generica/clase-listarray-less-than-t-greater-than.md) o [`ListLinked<T>`](../parte-1-edl-lista-generica/clase-listlinked-less-than-t-greater-than.md).
 
-El orden de los elementos de la lista determinará su precedencia en el dibujo, en caso de existir superposición de figuras: el primer elemento de la lista será el que aparecerá al frente , mientras que el último elemento aparecerá al fondo.
+El orden de los elementos de la lista determinará su precedencia en el dibujo, en caso de existir superposición de figuras: el primer elemento de la lista será el que aparecerá al frente, mientras que el último elemento aparecerá al fondo.
 
 ### Atributos
 
