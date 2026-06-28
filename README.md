@@ -23,7 +23,7 @@ layout:
 
 <figure><img src=".gitbook/assets/logos.png" alt=""><figcaption></figcaption></figure>
 
-En la Práctica 1 trabajaremos los **conceptos y técnicas sobre Programación Orientada a Objetos (POO) y Programación Genérica (PG)** que hemos aprendido en el Tema 1 de teoría.&#x20;
+En la Práctica 1 trabajaremos los **conceptos y técnicas sobre Programación Orientada a Objetos (POO) y Programación Genérica (PG)** que hemos visto en teoría.&#x20;
 
 Concretamente, desarrollaremos un **proyecto informático para gestionar el backend de una potencial aplicación de dibujo 2D**. Esto probablemente os recordará a una de las prácticas de la asignatura "Programación". Pues bien, vamos a desarrollar un proyecto inspirado en dicha práctica, pero sacrificando algunas funcionalidades para poner el **foco en el diseño de interfaces, jerarquías de clases, y clases genéricas**, aplicando técnicas de programación avanzadas. La práctica se divide en dos partes: &#x20;
 
